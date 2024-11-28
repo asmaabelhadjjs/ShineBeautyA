@@ -2,18 +2,20 @@ body {
     margin: 0;
     padding: 0;
 }
-.nav{
+
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:  #da0d6c62; /* Soft pink for a beauty theme */
+    background-color: #da0d6c62;
+    /* Soft pink for a beauty theme */
     padding: 2px;
 }
 
 
-.nav ul{
+.nav ul {
     /* padding: 10px 20px; */
-   
+
     color: rgb(121, 10, 102);
     display: flex;
     cursor: pointer;
@@ -23,10 +25,11 @@ body {
     font-size: x-large;
     /* caption-side: inherit; */
     /* text-decoration: none; */
- 
+
 }
-.nav li{
-  
+
+.nav li {
+
     padding: 10px 20px;
     color: rgb(114, 8, 96);
     /* display: flex; */
@@ -36,26 +39,131 @@ body {
     /* gap: 40px; */
     font-size: medium;
     list-style-type: none;
- 
-}
-.nav a{
 
-    padding-right: 20% ; 
+}
+
+.nav a {
+
+    padding-right: 20%;
     text-decoration: none;
-    color:rgb(102, 6, 86)
-
+    color: rgb(102, 6, 86)
 }
-#Logo{
-   
+
+#Logo {
+
     height: 70px;
     width: 70px;
     border-radius: 50px;
-   
- 
+
 }
 
 
+body {
 
+    .products-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permet de passer à la ligne suivante si l'espace est insuffisant */
+        justify-content: center;
+        /* Centre les produits horizontalement */
+        gap: 20px;
+        /* Espace entre les produits */
+        padding: 20px;
+
+    }
+
+
+    /* Style pour chaque section de produit */
+    .photo-section {
+        background-color: #fff;
+        /* Fond blanc pour les sections de produit */
+        border-radius: 10px;
+        /* Coins arrondis */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Ombre pour un effet de profondeur */
+        margin: 20px;
+    
+        padding: 15px;
+        width: 150px;
+        max-width: 300%;
+        /* Largeur fixe */
+        text-align: center;
+        /* Centre le texte et les images */
+        justify-content: space-between; /* Garde le bouton au bas */
+    flex-direction: column;
+    display: flex;
+    }
+
+    /* Style pour l'image */
+    .photo {
+        width: 100%;
+        /* L'image prend toute la largeur de la section */
+        height: auto;
+        /* Garde les proportions de l'image */
+        border-radius: 5px;
+        /* Coins arrondis pour l'image */
+        margin-bottom: 5px;
+        /* Espace entre l'image et les commentaires */
+    }
+
+    /* Style pour la section de commentaires */
+    .comment-section {
+        text-align: left;
+        /* Alignement à gauche pour le texte */
+    }
+
+    /* Style pour chaque commentaire */
+    .comment {
+        font-size: 14px;
+        /* Taille de police pour les commentaires */
+        color: #333;
+        /* Couleur du texte */
+        margin: 5px 0;
+        /* Espace entre les commentaires */
+    }
+
+    /* Style pour le titre de la section (nom du produit) */
+    .comment-section p:first-of-type {
+        font-weight: bold;
+        /* Titre en gras */
+        color: #2c3e50;
+        /* Couleur du titre */
+        font-size: 16px;
+        /* Taille légèrement plus grande */
+    }
+    .price {
+        font-size: 16px; /* Taille du texte */
+        color: #00070e; /* Couleur du texte */
+        margin-top: 10px; /* Espace au-dessus */
+    }
+    
+    .price-label {
+        font-weight: bold; /* Met le label "Prix :" en gras */
+    }
+    
+    .price-value {
+        color: #6a034b; /* Couleur différente pour le prix */
+        font-size: 18px; /* Taille de police légèrement plus grande pour le prix */
+    }
+    .order-button {
+        background-color: #50032d; /* Couleur de fond */
+        color: #f1ecef; /* Couleur du texte */
+        border: none; /* Pas de bordure */
+        border-radius: 5px; /* Coins arrondis */
+        padding: 10px 20px; /* Espace intérieur */
+        cursor: pointer; /* Curseur en forme de main */
+        font-size: 16px; /* Taille de la police */
+        transition: background-color 0.3s ease; /* Effet de transition */
+        margin-top: auto; /* Espace au-dessus */
+        display: block; /* Pour centrer le bouton */
+        width: 100%; /* Prend toute la largeur de la section */
+    }
+    
+    .order-button:hover {
+        background-color: #ed0c8b; /* Changement de couleur au survol */
+    }
+
+}
 
 
 /* Section Commande */
@@ -129,7 +237,7 @@ input[readonly] {
     color: #333;
 }
 
- /* Partie footer */
+/* Partie footer */
 footer {
     background: linear-gradient(135deg, #1f1f1f, #282828);
     color: #f5f5f5;
@@ -174,8 +282,10 @@ footer {
     max-width: 150px;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
-    border-radius: 50%; /* Bordure circulaire */
-    overflow: hidden;   /* Contenu ajusté à la forme circulaire */
+    border-radius: 50%;
+    /* Bordure circulaire */
+    overflow: hidden;
+    /* Contenu ajusté à la forme circulaire */
 }
 
 /* Liens vers la carte */
@@ -183,18 +293,22 @@ footer {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: white; /* Couleur de base */
+    color: white;
+    /* Couleur de base */
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
 .map-link:hover {
-    color: #e472ba; /* Couleur rose au survol */
-    text-shadow: 0 0 5px #e472ba, 0 0 10px #e472ba; /* Ombre brillante */
+    color: #e472ba;
+    /* Couleur rose au survol */
+    text-shadow: 0 0 5px #e472ba, 0 0 10px #e472ba;
+    /* Ombre brillante */
 }
 
 .map-icon {
-    margin-left: 5px; /* Espacement entre texte et icône */
+    margin-left: 5px;
+    /* Espacement entre texte et icône */
 }
 
 /* Icônes des réseaux sociaux */

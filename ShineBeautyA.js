@@ -1,3 +1,15 @@
+// Sélection de tous les boutons de commande
+const orderButtons = document.querySelectorAll('.order-button');
+
+// Ajout d'un événement 'click' à chaque bouton
+orderButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Commande passée avec succès !');
+    });
+});
+
+
+
 // Partie formulaire 
 document.addEventListener("DOMContentLoaded", function () {
     const quantityInput = document.getElementById("quantity");
@@ -20,5 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Commande finalisée. Merci pour votre achat !");
         orderForm.reset();
         quantityInput.dispatchEvent(new Event("input")); // Réinitialiser le prix total
+     
     });
 });
