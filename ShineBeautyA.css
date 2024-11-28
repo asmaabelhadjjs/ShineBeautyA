@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #da0d6c62; /* Soft pink for a beauty theme */
+    padding: 2px;
+}
+
+
+.nav ul{
+    /* padding: 10px 20px; */
+   
+    color: rgb(121, 10, 102);
+    display: flex;
+    cursor: pointer;
+    /* text-decoration: none; */
+    /* align-items: center; */
+    /* gap: 10px; */
+    font-size: x-large;
+    /* caption-side: inherit; */
+    /* text-decoration: none; */
+ 
+}
+.nav li{
+  
+    padding: 10px 20px;
+    color: rgb(114, 8, 96);
+    /* display: flex; */
+    cursor: pointer;
+    /* text-decoration: none; */
+    /* align-items: end; */
+    /* gap: 40px; */
+    font-size: medium;
+    list-style-type: none;
+ 
+}
+.nav a{
+
+    padding-right: 20% ; 
+    text-decoration: none;
+    color:rgb(102, 6, 86)
+
+}
+#Logo{
+   
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+   
+ 
+}
+
+
+
+
+
+
+
+  
+footer {
+    background-color: #d4a8a8; /* Fond sombre */
+    color: #4d1a1a; /* Texte en blanc */
+    padding: 30px 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style général du footer */
+footer {
+    background: linear-gradient(135deg, #1f1f1f, #282828);
+    color: #f5f5f5;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    border-top: 4px solid #e472ba;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  /* Sections du footer */
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e472ba;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  /* Logo */
+  .footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    background: #333;
+    color: #f5f5f5;
+    font-size: 20px;
+    transition: transform 0.3s ease,  0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background: #e472ba;
+    color: #fff;
+    transform: scale(1.2);
+  }
+  
+  .social-icon i {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover i {
+    transform: rotate(360deg);
+  }
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .footer-center {
+        margin-bottom: 20px;
+    }
+
+    .footer-right ul {
+        justify-content: center;
+    }
+
+    .footer-right li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
