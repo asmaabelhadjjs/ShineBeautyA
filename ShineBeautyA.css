@@ -58,31 +58,90 @@ body {
 
 
 
-
-
-  
-footer {
-    background-color: #d4a8a8; /* Fond sombre */
-    color: #4d1a1a; /* Texte en blanc */
-    padding: 30px 20px;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    font-size: 1.3rem;
-
-    text-align: center;
+/* Section Commande */
+.order-section {
+    background-color: #fff;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-/* Style général du footer */
+.order-title {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    color: #d07d8d;
+    margin-bottom: 20px;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #d07d8d;
+    box-shadow: 0 0 8px 2px rgba(208, 125, 141, 0.7);
+    outline: none;
+}
+
+.submit-btn {
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #d07d8d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #b06473;
+}
+
+input[readonly] {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+ /* Partie footer */
 footer {
     background: linear-gradient(135deg, #1f1f1f, #282828);
     color: #f5f5f5;
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
     border-top: 4px solid #e472ba;
-  }
-  
-  .footer-container {
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur du footer */
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -90,38 +149,61 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-  }
-  
-  /* Sections du footer */
-  .footer-section {
-    flex: 1;
-    min-width: 250px;
-  }
-  
-  .footer-title {
+}
+
+/* Sections du footer */
+.footer-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #e472ba;
-  }
-  
-  .footer-text {
+}
+
+.footer-text {
     font-size: 14px;
     line-height: 1.8;
-  }
-  
-  /* Logo */
-  .footer-logo {
+}
+
+/* Logo du footer */
+.footer-logo {
     max-width: 150px;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
-  }
-  .social-icons {
+    border-radius: 50%; /* Bordure circulaire */
+    overflow: hidden;   /* Contenu ajusté à la forme circulaire */
+}
+
+/* Liens vers la carte */
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Couleur de base */
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.map-link:hover {
+    color: #e472ba; /* Couleur rose au survol */
+    text-shadow: 0 0 5px #e472ba, 0 0 10px #e472ba; /* Ombre brillante */
+}
+
+.map-icon {
+    margin-left: 5px; /* Espacement entre texte et icône */
+}
+
+/* Icônes des réseaux sociaux */
+.social-icons {
     display: flex;
     gap: 15px;
-  }
-  
-  .social-icon {
+}
+
+.social-icon {
     display: inline-block;
     width: 45px;
     height: 45px;
@@ -131,22 +213,22 @@ footer {
     background: #333;
     color: #f5f5f5;
     font-size: 20px;
-    transition: transform 0.3s ease,  0.3s ease, color 0.3s ease;
-  }
-  
-  .social-icon:hover {
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
     background: #e472ba;
     color: #fff;
     transform: scale(1.2);
-  }
-  
-  .social-icon i {
+}
+
+.social-icon i {
     transition: transform 0.3s ease;
-  }
-  
-  .social-icon:hover i {
+}
+
+.social-icon:hover i {
     transform: rotate(360deg);
-  }
+}
 
 /* Responsivité */
 @media (max-width: 768px) {
