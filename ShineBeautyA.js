@@ -75,8 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const productSelect = document.getElementById("productSelect"); // Sélection produit
     const ordersTbody = document.getElementById('orders-tbody'); // Tableau des commandes
 
-    // Calcul initial du prix
-    quantityInput.dispatchEvent(new Event("input"));
+    // Fonction pour mettre à jour le prix total
+    function updateTotalPrice() {
+        const quantity = parseInt(quantityInput.value); // Récupère la quantité
+        const totalPrice = unitPrice * quantity; // Calcule le prix total
+        totalPriceInput.value = totalPrice.toFixed(2); // Met à jour le champ du prix total
+    }
+
+    // Met à jour le prix dès le début si une quantité est déjà définie
+    updateTotalPrice();
+
+    // Écoute l'événement de changement de quantité dans le formulaire
+    quantityInput.addEventListener('input', updateTotalPrice);
 
     // Gestion du formulaire
     orderForm.addEventListener("submit", (e) => {
