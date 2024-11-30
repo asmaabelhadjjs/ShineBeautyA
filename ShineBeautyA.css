@@ -1,3 +1,66 @@
+/* Style général */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section héros (image + texte) */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* S'assure que l'image couvre toute la section */
+    filter: brightness(80%); /* Assombrit légèrement l'image pour le texte */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    animation: fadeIn 3s ease-in-out; /* Animation d'apparition */
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+#site-name {
+    color: #e472ba; /* Couleur personnalisée */
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+/* yallahwii */
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +72,13 @@ body {
     background-color:  #da0d6c62; /* Soft pink for a beauty theme */
     padding: 2px;
 }
-
+.nav a:hover{
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Ombre du texte */
+    color: #e472ba; /* Change la couleur du texte pour plus de contraste */
+    transition: all 0.3s ease; /* Effet fluide lors du survol */
+    border-bottom: 2px solid #e472ba; /* Ligne en dessous */
+    transition: all 0.3s ease; /* Effet fluide lors du survol */
+}
 
 .nav ul{
     color: rgb(121, 10, 102);

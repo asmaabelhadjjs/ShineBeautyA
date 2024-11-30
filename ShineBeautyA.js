@@ -1,3 +1,29 @@
+// Page d'acceuil
+document.addEventListener("DOMContentLoaded", () => {
+    const siteNameElement = document.getElementById("site-name");
+    const text = siteNameElement.textContent; // Récupère le texte "ShineBeauty"
+    siteNameElement.textContent = ""; // Vide le contenu initial
+    let index = 0;
+    const repeatDelay = 1000; // Délai avant de recommencer (en millisecondes)
+
+    function typeLetterByLetter() {
+        if (index < text.length) {
+            siteNameElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeLetterByLetter, 150); // Définit la vitesse d'affichage (150 ms par lettre)
+        } else {
+            // Réinitialise et recommence après un délai
+            setTimeout(() => {
+                siteNameElement.textContent = "";
+                index = 0;
+                typeLetterByLetter();
+            }, repeatDelay);
+        }
+    }
+
+    typeLetterByLetter();
+});
+
 // Défilement fluide vers la section Contact
 document.addEventListener("DOMContentLoaded", function() {
     const contactLink = document.querySelector('a[href="#Contact"]');
