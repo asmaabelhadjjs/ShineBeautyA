@@ -12,11 +12,10 @@ body {
 
 
 .nav ul{
-    /* padding: 10px 20px; */
-   
     color: rgb(121, 10, 102);
     display: flex;
     cursor: pointer;
+    gap: 30px;
     /* text-decoration: none; */
     /* align-items: center; */
     /* gap: 10px; */
@@ -45,6 +44,30 @@ body {
     color:rgb(102, 6, 86)
 
 }
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espace entre les groupes */
+    align-items: center; /* Centrer verticalement les éléments */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+/* Icône de chariot */
+.cart-icon {
+    margin-left: auto; /* Repousse l'icône vers la droite */
+    font-size: 24px; /* Taille de l'icône */
+    color: rgb(102, 6, 86); /* Couleur de l'icône */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    color: #e472ba; /* Change de couleur au survol */
+    text-shadow: 0 0 5px #e472ba; /* Ombre brillante */
+}
+
+.cart-icon i {
+    font-size: 24px; /* Taille de l'icône */
+}
 #Logo{
    
     height: 70px;
@@ -53,12 +76,124 @@ body {
    
  
 }
+/* Partie des Produits */
+body {
 
+    .products-container {
+        display: flex;
+        flex-wrap:wrap;
+        /* Permet de passer à la ligne suivante si l'espace est insuffisant */
+        justify-content: center;
+        /* Centre les produits horizontalement */
+        gap: 20px;
+        /* Espace entre les produits */
+        padding:20px;
 
+    }
 
+    /* Style pour chaque section de produit */
+    .photo-section {
+        background-color: #fff;
+        /* Fond blanc pour les sections de produit */
+        border-radius: 10px;
+        /* Coins arrondis */
+        box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+        /* Ombre pour un effet de profondeur */
+        margin: 20px;
+    
+        padding: 19px;
+        width: 150px;
+        max-width: 300%;
+        /* Largeur fixe */
+        text-align: left;
+        /* Centre le texte et les images */
+        justify-content: space-between; /* Garde le bouton au bas */
+    flex-direction: column;
+    display: flex;
+    }
 
+    /* Style pour l'image */
+    .photo {
+        width: 100%;
+        /* L'image prend toute la largeur de la section */
+        height: auto;
+        /* Garde les proportions de l'image */
+        border-radius: 4px;
+        /* Coins arrondis pour l'image */
+        margin-bottom: 20px;
+        /* Espace entre l'image et les commentaires */
+    }
 
-/* Section Commande */
+    /* Style pour la section de commentaires */
+    .comment-section p:first-of-type {
+        font-weight: bold; /* Titre en gras */
+        color: #0b0a0b; /* Couleur noire foncée pour le nom du produit */
+        font-size: 30px; /* Taille légèrement plus grande */
+         margin: 15px 0; /* Espace autour du nom */
+        text-align: left;
+        /* Alignement à gauche pour le texte */
+    }
+
+    /* Style pour chaque commentaire */
+    .comment p:nth-of-type(n+2){
+        font-size: 14px;
+        /* Taille de police pour les commentaires */
+        color: #3a3939;
+        /* Couleur du texte */
+        margin: 5px 0;
+        /* Espace entre les commentaires */
+    }
+
+    /* Style pour le titre de la section (nom du produit) */
+    .comment-section p:first-of-type {
+        font-weight: bolder;
+        /* Titre en gras */
+        color: #e472ba;
+        /* Couleur du titre */
+        font-size: 18px;
+        /* Taille légèrement plus grande */
+    }
+    .comment.availability {
+        color: green; /* Change la couleur en vert */
+        font-weight: bold; /* Met le texte en gras */
+    }
+    .price {
+        font-size: 18px; /* Taille du texte */
+        color: #d07d8d; /* Couleur du texte */
+        margin-top: 10px; /* Espace au-dessus */
+    }
+    
+    .price-label {
+        font-weight: bold; /* Met le label "Prix :" en gras */
+    }
+    
+    .price-value {
+        color: #d07d8d; 
+        font-weight: bold;
+        font-size: 19px; /* Taille de police légèrement plus grande pour le prix */
+    }
+    .order-button {
+        background-color: #ac1467; /* Couleur de fond */
+        color: #f1ecef; /* Couleur du texte */
+        border: none; /* Pas de bordure */
+        border-radius: 5px; /* Coins arrondis */
+        padding: 10px 20px; /* Espace intérieur */
+        cursor: pointer; /* Curseur en forme de main */
+        font-size: 16px; /* Taille de la police */
+        transition: background-color 0.3s ease; /* Effet de transition */
+        margin-top: auto; /* Espace au-dessus */
+        display: block; /* Pour centrer le bouton */
+        width: 100%; /* Prend toute la largeur de la section */
+    }
+    
+    .order-button:hover {
+        background-color: #ed0c8b; /* Changement de couleur au survol */
+        box-shadow:0 8px 15px rgba(219, 82, 160, 0.3);
+    }
+
+}
+
+/* Section des Commandes */
 .order-section {
     background-color: #fff;
     
@@ -306,112 +441,4 @@ footer {
         display: inline-block;
         margin: 0 10px;
     }
-}
-
-
-body {
-
-    .products-container {
-        display: flex;
-        flex-wrap: wrap;
-        /* Permet de passer à la ligne suivante si l'espace est insuffisant */
-        justify-content: center;
-        /* Centre les produits horizontalement */
-        gap: 20px;
-        /* Espace entre les produits */
-        padding: 20px;
-
-    }
-
-
-    /* Style pour chaque section de produit */
-    .photo-section {
-        background-color: #fff;
-        /* Fond blanc pour les sections de produit */
-        border-radius: 10px;
-        /* Coins arrondis */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Ombre pour un effet de profondeur */
-        margin: 20px;
-    
-        padding: 15px;
-        width: 150px;
-        max-width: 300%;
-        /* Largeur fixe */
-        text-align: center;
-        /* Centre le texte et les images */
-        justify-content: space-between; /* Garde le bouton au bas */
-    flex-direction: column;
-    display: flex;
-    }
-
-    /* Style pour l'image */
-    .photo {
-        width: 100%;
-        /* L'image prend toute la largeur de la section */
-        height: auto;
-        /* Garde les proportions de l'image */
-        border-radius: 5px;
-        /* Coins arrondis pour l'image */
-        margin-bottom: 5px;
-        /* Espace entre l'image et les commentaires */
-    }
-
-    /* Style pour la section de commentaires */
-    .comment-section {
-        text-align: left;
-        /* Alignement à gauche pour le texte */
-    }
-
-    /* Style pour chaque commentaire */
-    .comment {
-        font-size: 14px;
-        /* Taille de police pour les commentaires */
-        color: #333;
-        /* Couleur du texte */
-        margin: 5px 0;
-        /* Espace entre les commentaires */
-    }
-
-    /* Style pour le titre de la section (nom du produit) */
-    .comment-section p:first-of-type {
-        font-weight: bold;
-        /* Titre en gras */
-        color: #2c3e50;
-        /* Couleur du titre */
-        font-size: 16px;
-        /* Taille légèrement plus grande */
-    }
-    .price {
-        font-size: 16px; /* Taille du texte */
-        color: #00070e; /* Couleur du texte */
-        margin-top: 10px; /* Espace au-dessus */
-    }
-    
-    .price-label {
-        font-weight: bold; /* Met le label "Prix :" en gras */
-    }
-    
-    .price-value {
-        color: #6a034b; /* Couleur différente pour le prix */
-        font-size: 18px; /* Taille de police légèrement plus grande pour le prix */
-    }
-    .order-button {
-        background-color: #50032d; /* Couleur de fond */
-        color: #f1ecef; /* Couleur du texte */
-        border: none; /* Pas de bordure */
-        border-radius: 5px; /* Coins arrondis */
-        padding: 10px 20px; /* Espace intérieur */
-        cursor: pointer; /* Curseur en forme de main */
-        font-size: 16px; /* Taille de la police */
-        transition: background-color 0.3s ease; /* Effet de transition */
-        margin-top: auto; /* Espace au-dessus */
-        display: block; /* Pour centrer le bouton */
-        width: 100%; /* Prend toute la largeur de la section */
-    }
-    
-    .order-button:hover {
-        background-color: #ed0c8b; /* Changement de couleur au survol */
-    }
-
 }

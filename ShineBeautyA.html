@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brief</title>
     <link rel="stylesheet" href="ShineBeautyA.css">
+    <script src="ShineBeautyA.js" defer></script>
 
 </head>
 
@@ -14,77 +15,74 @@
         <div class="nav">
             <img src="Logo institut de beauté illustration rose noir.png" id="Logo">
             <ul>
-                <li><a href="./Accueil.html">Accueil</a></li>
-                <li><a href="./Contact.html">Contact</a></li>
-                <li><a href="./Produits.html">Produits</a></li>
+                <li><a href="#Accueil">Accueil</a></li>
+                <li><a href="#Produits">Produits</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li>
+                    <a href="#products" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i> <!-- Icône Font Awesome -->
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
-
-    <div class="products-container">
+<!-- partie des produit  -->
+    <div class="products-container" id="productsSection">
         <div class="photo-section">
-            <img src="lo.PNG" alt="Description de l'image" class="photo"> <!-- Ajout de la photo -->
+            <img src="les-marques-emblematiques-de-la-parfumerie-pour-femme.jpg" alt="Description de l'image" class="photo"> 
             <div class="comment-section">
                 <p class="comment">Ladies</p>
-                <p class="comment">Notre Parfum à la fois légère et fraîche. Elle dévoile tous ses arômes.ici un autre
-                    commentaire décrivant cette belle photo.</p>
-                <p class="comment">Disponibilité: oui</p>
+                <p class="comment"> Parfum gourmand et élégant aux notes de cerise et de vanille</p>
+                <p class="comment availability">Disponibilité: oui</p>
                 <p class="price"><span class="price-label">Prix :</span> <span class="price-value">50 €</span></p>
-                <div class="buttons"><button class="order-button">Commander</button></div> <!-- Bouton pour passer la commande -->
+                <div class="buttons"><button class="order-button">Commander</button></div> 
             </div>
         </div>
 
         <div class="photo-section">
-            <img src="rou.PNG" alt="Description de l'image" class="photo"> <!-- Ajout de la photo -->
+            <img src="3348901527118_1_1.jpg" alt="Description de l'image" class="photo"> 
             <div class="comment-section">
                 <p class="comment">Rouge à lèvres</p>
-                <p class="comment">Mat ou brillant, il illumine le visage et pare les lèvres de sensualité.</p>
-                <p class="comment">Disponibilité: oui</p>
+                <p class="comment">Rouge à lèvres iconique pour une couleur intense et une tenue parfaite</p>
+                <p class="comment availability">Disponibilité: oui</p>
                 <p class="price"><span class="price-label">Prix :</span> <span class="price-value">50 €</span></p>
-                <div  class="buttons"><button class="order-button">Commander</button></div> <!-- Bouton pour passer la commande -->
+                <div  class="buttons"><button class="order-button">Commander</button></div> 
             </div>
         </div>
         <div class="photo-section">
-            <img src="po.PNG" alt="Description de l'image" class="photo"> <!-- Ajout de la photo -->
+            <img src="light.jpg" alt="Description de l'image" class="photo"> 
             <div class="comment-section">
-                <p class="comment">poudre</p>
-                <p class="comment">Idéale pour les peaux sèches, la poudre compacte préserve l'éclat naturel du teint en
-                    se fondant parfaitement à la peau. Corrigeant mieux les imperfections</p>
-                <p class="comment">Disponibilité: oui</p>
+                <p class="comment">Poudre</p>
+                <p class="comment">Poudre légère pour un teint matifié et un fini naturel toute la journée</p>
+                <p class="comment availability">Disponibilité: oui</p>
                 <p class="price"><span class="price-label">Prix :</span> <span class="price-value">50 €</span></p>
-                <div  class="buttons"><button class="order-button">Commander</button></div> <!-- Bouton pour passer la commande -->
+                <div  class="buttons"><button class="order-button">Commander</button></div> 
             </div>
         </div>
         <div class="photo-section">
-            <img src="cra.PNG" alt="Description de l'image" class="photo"> <!-- Ajout de la photo -->
+            <img src="cra.PNG" alt="Description de l'image" class="photo"> 
             <div class="comment-section">
-                <p class="comment">crayon des yeux</p>
-                <p class="comment">Ce crayon yeux noir est résistant à l'eau, à l'humidité et à la sueur. Sa mine
-                    rétractable permet un tracé précis et sur-mesure avec un possible effet liner, dès la 1ère
-                    application.</p>
-                <p class="comment">Disponibilité: oui</p>
+                <p class="comment">Crayon des yeux</p>
+                <p class="comment">Un crayon pour les yeux précis et longue tenue, idéal pour intensifier le regard</p>
+                <p class="comment availability">Disponibilité: oui</p>
                 <p class="price"><span class="price-label">Prix :</span> <span class="price-value">50 €</span></p>
-                <div  class="buttons"><button class="order-button">Commander</button></div> <!-- Bouton pour passer la commande -->
+                <div  class="buttons"><button class="order-button">Commander</button></div> 
             </div>
         </div>
         <div class="photo-section">
-            <img src="fe.PNG" alt="Description de l'image" class="photo"> <!-- Ajout de la photo -->
+            <img src="fe.PNG" alt="Description de l'image" class="photo"> 
             <div class="comment-section">
                 <p class="comment">Fond de teint</p>
-                <p class="comment">Couvrance modérée et longue durée pour un teint uniforme et naturel. La texture
-                    légère et confortable couvre la peau en douceur, masque tous les imperfections </p>
-                <p class="comment">Disponibilité: oui</p>
+                <p class="comment">Fond de teint fluide à une couvrance légère et longue durée, pour un teint uniforme, lumineux et naturel </p>
+                <p class="comment availability">Disponibilité: oui</p>
                 <p class="price"><span class="price-label">Prix :</span> <span class="price-value">50 €</span></p>
-                <div class="buttons"><button class="order-button">Commander</button></div> <!-- Bouton pour passer la commande -->
+                <div class="buttons"><button class="order-button">Commander</button></div> 
             </div>
         </div>
     </div>
-
-
-    <!-- partie des produit  -->
     
 <!-- Partie du formulaire de commande -->
-<section class="order-section">
+<section class="order-section" id="orderFormSection">
     <h2 class="order-title">Passer votre commande</h2>
     <form id="orderForm" class="order-form">
         <div class="form-group">
@@ -106,6 +104,16 @@
         <div class="form-group">
             <label for="phoneNumber">Numéro de Téléphone</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="productSelect">Produit</label>
+            <select id="productSelect" required>
+                <option value="Ladies">Parfum Ladies</option>
+                <option value="Rouge à lèvres">Rouge à lèvres</option>
+                <option value="Poudre">Poudre</option>
+                <option value="Crayon des yeux">Crayon des yeux</option>
+                <option value="Fond de teint">Fond de teint</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="quantity">Quantité</label>
@@ -141,7 +149,7 @@
 </section>
 
     <!-- Footer -->
-<footer>
+<footer id="Contact">
     <div class="footer-container">
         <!-- Section Logo -->
         <div class="footer-section logo-section">
@@ -176,7 +184,6 @@
                 rel="stylesheet">
             <p class="footer-title">Suivez-nous :</p>
             <div class="social-icons">
-                <!-- Lien Facebook -->
                 <a 
                     href="https://www.facebook.com" 
                     target="_blank" 
@@ -184,8 +191,6 @@
                     aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-
-                <!-- Lien Instagram -->
                 <a 
                     href="https://www.instagram.com" 
                     target="_blank" 
@@ -193,8 +198,6 @@
                     aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-
-                <!-- Lien WhatsApp -->
                 <a 
                     href="https://www.whatsapp.com" 
                     target="_blank" 
@@ -202,8 +205,6 @@
                     aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-
-                <!-- Lien LinkedIn -->
                 <a 
                     href="https://www.linkedin.com" 
                     target="_blank" 

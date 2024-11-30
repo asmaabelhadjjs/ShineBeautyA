@@ -1,87 +1,115 @@
+// Défilement fluide vers la section Contact
+document.addEventListener("DOMContentLoaded", function() {
+    const contactLink = document.querySelector('a[href="#Contact"]');
+    contactLink.addEventListener('click', function(event) {
+        event.preventDefault();  // Empêche le comportement par défaut du lien
+        const contactSection = document.getElementById('Contact');
+        window.scrollTo({
+            top: contactSection.offsetTop,
+            behavior: 'smooth'  // Défilement fluide
+        });
+    });
+});
+// Défilement fluide vers le formulaire de commande (section "Passer votre commande")
+const cartIcon = document.querySelector('.cart-icon');
+cartIcon.addEventListener('click', function(event) {
+    event.preventDefault();  // Empêche le comportement par défaut du lien
+    const orderFormSection = document.getElementById('orderFormSection');
+    window.scrollTo({
+        top: orderFormSection.offsetTop,
+        behavior: 'smooth'  // Défilement fluide
+    });
+});
+//  Défilement fluide vers la section Produits
+        const produitsLink = document.querySelector('a[href="#Produits"]');
+        produitsLink.addEventListener('click', function(event) {
+            event.preventDefault();  // Empêche le comportement par défaut du lien
+            const productsSection = document.getElementById('productsSection');
+            window.scrollTo({
+                top: productsSection.offsetTop,
+                behavior: 'smooth'  // Défilement fluide
+            });
+        });
+
+// Sélectionne les liens avec des ancres (#)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut
+        const targetId = this.getAttribute('href').substring(1); // Récupère l'id cible
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Défilement fluide
+                block: 'start'
+            });
+        }
+    });
+});
+
 // Sélection de tous les boutons de commande
 const orderButtons = document.querySelectorAll('.order-button');
+// Déclaration des variables pour stocker les informations sur les produits
+let totalQuantity = 0;
+const unitPrice = 50; // Prix unitaire de chaque produit (50€)
+
 // Ajout d'un événement 'click' à chaque bouton
 orderButtons.forEach(button => {
     button.addEventListener('click', () => {
-        alert('Commande passée avec succès !');
+        // Incrémente la quantité à chaque commande
+        totalQuantity++; // Chaque fois que l'utilisateur clique, la quantité augmente de 1
+        const quantityInput = document.getElementById("quantity");
+        quantityInput.value = totalQuantity; // Met à jour la quantité dans le champ
+
+        // Met à jour le prix total en fonction de la quantité
+        const totalPriceInput = document.getElementById("totalPrice");
+        totalPriceInput.value = (totalQuantity * unitPrice).toFixed(2); // Calcule le prix total
     });
 });
 
-
-
-
-// Partie formulaire 
+// Partie formulaire
 document.addEventListener("DOMContentLoaded", function () {
+    const orderForm = document.getElementById("orderForm");
     const quantityInput = document.getElementById("quantity");
     const totalPriceInput = document.getElementById("totalPrice");
-    const unitPrice = 50; // Prix unitaire
+    const productSelect = document.getElementById("productSelect"); // Sélection produit
+    const ordersTbody = document.getElementById('orders-tbody'); // Tableau des commandes
 
-    // Mettre à jour le prix total en fonction de la quantité
-    quantityInput.addEventListener("input", () => {
-        const quantity = parseInt(quantityInput.value) || 0;
-        totalPriceInput.value = (quantity * unitPrice).toFixed(2);
-    });
-
-    // Calcul initial
+    // Calcul initial du prix
     quantityInput.dispatchEvent(new Event("input"));
 
     // Gestion du formulaire
-    const orderForm = document.getElementById("orderForm");
     orderForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Empêche l'envoi du formulaire
+
+        // Récupère les informations du formulaire
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const product = productSelect.value; // Récupère le produit sélectionné
+        const quantity = parseInt(quantityInput.value);
+        const totalPrice = parseFloat(totalPriceInput.value);
+
+        // Crée une nouvelle ligne pour le tableau des commandes
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>#</td> <!-- ID de la commande (non dynamique ici) -->
+            <td>${lastName}</td>
+            <td>${firstName}</td>
+            <td>${product}</td>
+            <td>${quantity}</td>
+            <td>${totalPrice.toFixed(2)}€</td>
+            <td>${new Date().toLocaleDateString()}</td>
+        `;
+
+        // Ajoute la nouvelle ligne au tableau
+        ordersTbody.appendChild(row);
+
+        // Affiche un message de confirmation
         alert("Commande finalisée. Merci pour votre achat !");
+
+        // Réinitialise le formulaire
         orderForm.reset();
-        quantityInput.dispatchEvent(new Event("input")); // Réinitialiser le prix total
+        totalQuantity = 0; // Réinitialise la quantité
+        quantityInput.dispatchEvent(new Event("input")); // Réinitialise le prix total
     });
-});
-
-// partie du tableau des commandes passées 
-// Données fictives pour les commandes passées
-const orders = [
-    {
-        id: 1,
-        nom: 'Dupont',
-        prenom: 'Marie',
-        produit: 'Crème Anti-âge',
-        quantite: 2,
-        prixTotal: '50€',
-        date: '2024-11-25'
-    },
-    {
-        id: 2,
-        nom: 'Durand',
-        prenom: 'Sophie',
-        produit: 'Rouge à lèvres mat',
-        quantite: 1,
-        prixTotal: '20€',
-        date: '2024-11-26'
-    },
-    {
-        id: 3,
-        nom: 'Martin',
-        prenom: 'Élodie',
-        produit: 'Mascara Volume',
-        quantite: 3,
-        prixTotal: '45€',
-        date: '2024-11-27'
-    }
-];
-
-// Ajouter les lignes des commandes au tableau
-const tbody = document.getElementById('orders-tbody');
-
-orders.forEach(order => {
-    const row = document.createElement('tr');
-    
-    row.innerHTML = `
-        <td>${order.id}</td>
-        <td>${order.nom}</td>
-        <td>${order.prenom}</td>
-        <td>${order.produit}</td>
-        <td>${order.quantite}</td>
-        <td>${order.prixTotal}</td>
-        <td>${order.date}</td>
-    `;
-    
-    tbody.appendChild(row);
 });
